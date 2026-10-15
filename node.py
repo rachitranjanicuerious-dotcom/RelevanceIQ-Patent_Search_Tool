@@ -1,4 +1,4 @@
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessageF
 from langgraph.types import interrupt
 from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
@@ -22,7 +22,7 @@ def load_few_shot_examples():
 FEW-SHOT CALIBRATION EXAMPLE
 ============================================================
 
-PRODUCT DESCRIPTION:
+PRODUCT DESCRIPTION: 
 {row["Product Description"]}
 
 PATENT:
@@ -65,7 +65,6 @@ class FeatureExtraction(BaseModel):
 feature_parser = PydanticOutputParser(
     pydantic_object=FeatureExtraction
 )
-
 
 # 2. PATENT FEATURE EXTRACTION
 # ============================================================
